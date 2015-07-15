@@ -63,7 +63,7 @@ namespace :unicorn do
     desc "#{command} unicorn"
     task command do
       on roles :app do
-        execute :service, fetch(:unicorn_service), command
+        sudo '/etc/init.d/', fetch(:unicorn_service), command
       end
     end
   end
